@@ -3,15 +3,8 @@ input.onButtonPressed(Button.A, function () {
     if (robber >= strip.length() + 2) {
         score = score + 1
         robber = 2
-        if (score % speedup == 0) {
-            if (tickspermove > 1) {
-                tickspermove = tickspermove - 1
-            }
-        }
     }
 })
-let speedup = 0
-let tickspermove = 0
 let robber = 0
 let score = 0
 let strip: neopixel.Strip = null
@@ -23,8 +16,8 @@ let ticker = 0
 score = 0
 let police = 5
 robber = 14
-tickspermove = 12
-speedup = 1
+let tickspermove = 10
+let speedup = 1
 basic.forever(function () {
     strip.setPixelColor((police - 2) % strip.length(), neopixel.colors(NeoPixelColors.Black))
     strip.setPixelColor((robber - 2) % strip.length(), neopixel.colors(NeoPixelColors.Black))
